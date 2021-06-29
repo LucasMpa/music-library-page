@@ -40,10 +40,10 @@ function Overview() {
       <FeaturedPlaylists>
         <SelectLanguage theme={linguageForTranslate}>
           <div onClick={() => {setLinguageForTranslate('portuguese')}}>
-            <img src={BrazilFlag} width="50px"/>
+            <img src={BrazilFlag} width="40px"/>
           </div>
           <div onClick={() => {setLinguageForTranslate('english')}}>
-            <img src={EuaFlag} width="50px"/>
+            <img src={EuaFlag} width="40px"/>
           </div>
         </SelectLanguage>
        

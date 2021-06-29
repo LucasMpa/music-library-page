@@ -7,6 +7,10 @@ export const Container = styled.div`
     width: 30%;
     max-width: 350px;
     height: 100vh;
+
+    @media(max-width: 800px) {
+        display: none;
+    }
 `;
 
 export const UserInformations = styled.div`

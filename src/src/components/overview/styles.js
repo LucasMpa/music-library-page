@@ -45,15 +45,27 @@ export const FeaturedPlaylists = styled.div`
 
 
 export const ContentProfile = styled.div`
+
     display: flex;
     width: 60vw;
     margin-top: 30px;
     color: #e5e5e5e7 ;
 
+    @media(max-width: 800px) {
+        flex-direction: column;
+        width: 80%;
+    }
+
+
 `;
 export const ProfileView = styled.div`
     flex-direction: column;
     width: 40%;
+
+    @media(max-width: 800px) {
+        width: 80%;
+    }
+
     & > h2 {
         margin-bottom: 30px;
     }
@@ -61,6 +73,9 @@ export const ProfileView = styled.div`
         display: flex;
         margin-bottom: 30px;
         opacity: 0.5;
+        @media(max-width: 800px) {
+            opacity: 1;
+        }
     }
 
     & > div:hover {
@@ -90,12 +105,20 @@ export const ProfileView = styled.div`
 export const Tracks = styled.div`
     flex-direction: column;
     width: 60%;
+
+     @media(max-width: 800px) {
+        width: 100%;
+    }
 `;
 
 export const ScrollableContent = styled.div`
     display: flex;
     width: 60vw;
     overflow-x: scroll;
+
+    @media(max-width: 800px) {
+        width: 80vw;
+    }
 
     ::-webkit-scrollbar {
         width: 4px;
@@ -132,6 +155,12 @@ export const ScrollableContent = styled.div`
             height: 230px;
             opacity: 0.5;
             border-radius: 15px;
+
+            @media(max-width: 800px) {
+                width: 230px;
+                height: 160px;
+                opacity: 1;
+            }
         } 
 
         & > img:hover{
@@ -147,6 +176,10 @@ export const ScrollableContent = styled.div`
 export const TracksContent = styled.div`
     display: flex;
     overflow-x: scroll;
+
+    @media(max-width: 800px) {
+        margin-bottom: 25px;
+    }
 
     ::-webkit-scrollbar {
         width: 4px;
@@ -183,6 +216,12 @@ export const TracksContent = styled.div`
             height: 230px;
             opacity: 0.5;
             border-radius: 15px;
+
+            @media(max-width: 800px) {
+                width: 230px;
+                height: 160px;
+                opacity: 1;
+            }
         } 
 
         & > img:hover{
