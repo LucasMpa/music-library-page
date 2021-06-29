@@ -6,7 +6,6 @@ export const Container = styled.div`
     background-color:  #040517;
     width: 30%;
     max-width: 350px;
-    height: 100vh;
 
     @media(max-width: 800px) {
         height: 100%;
