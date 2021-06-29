@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { 
   Container,
   FeaturedPlaylists, 
@@ -30,21 +30,29 @@ import Track5 from '../../assets/track5.jpg'
 import Track6 from '../../assets/track7.jpg'
 
 
+import {GiHamburgerMenu} from 'react-icons/gi'
 import BrazilFlag from '../../assets/brazil-flag.png'
 import EuaFlag from '../../assets/eua-flag.png'
 
 function Overview() {
-  const { toTranslate,setLinguageForTranslate, linguageForTranslate } = UseTranslateService();
+  const { toTranslate,setLinguageForTranslate, linguageForTranslate, setShowMenu } = UseTranslateService();
   return(
     <Container>
       <FeaturedPlaylists>
-        <SelectLanguage theme={linguageForTranslate}>
-          <div onClick={() => {setLinguageForTranslate('portuguese')}}>
-            <img src={BrazilFlag} width="40px"/>
+      
+        <SelectLanguage language={linguageForTranslate}>
+          <span onClick={() => setShowMenu(true)}>
+            <GiHamburgerMenu color={'#FFF'} />
+          </span>
+          <div> 
+            <div onClick={() => {setLinguageForTranslate('portuguese')}}>
+              <img src={BrazilFlag} width="40px"/>
+            </div>
+            <div onClick={() => {setLinguageForTranslate('english')}}>
+              <img src={EuaFlag} width="40px"/>
+            </div>
           </div>
-          <div onClick={() => {setLinguageForTranslate('english')}}>
-            <img src={EuaFlag} width="40px"/>
-          </div>
+         
         </SelectLanguage>
        
         <h1>{toTranslate('featuredPlaylists')}</h1>

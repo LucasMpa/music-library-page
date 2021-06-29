@@ -2,18 +2,21 @@ import React from 'react';
 import PlaceholderImage from '../../assets/dog.png'
 import {FiSettings, FiMusic,FiRadio} from 'react-icons/fi'
 import {BsNewspaper,BsPerson} from 'react-icons/bs'
-import {AiOutlineBell, AiFillLinkedin, AiFillGithub} from 'react-icons/ai'
-import { Container,UserInformations,Actions } from './styles';
+import {AiOutlineBell, AiFillLinkedin, AiFillGithub, AiOutlineClose} from 'react-icons/ai'
+import { Container,UserInformations,Actions,ContainerCloseMenu } from './styles';
 
 import { UseTranslateService } from "../../contexts/translateService";
 
 
 function userMenu() {
-  const { toTranslate } = UseTranslateService();
+  const { toTranslate, setShowMenu, showMenu } = UseTranslateService();
 
   return (
     <>
-      <Container>
+      <Container showMenu={showMenu}>
+        <ContainerCloseMenu>
+            <AiOutlineClose color={'#e5e5e5e7'} onClick={() => setShowMenu(false)}/>
+        </ContainerCloseMenu>
         <UserInformations>
           <img src={PlaceholderImage} alt='userImage'/>
           <div>
