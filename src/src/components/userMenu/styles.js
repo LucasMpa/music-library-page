@@ -9,7 +9,18 @@ export const Container = styled.div`
     height: 100vh;
 
     @media(max-width: 800px) {
-        display: none;
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: rgb(4, 5, 23);
+        overflow-x: hidden;
+        transition: 0.5s;
+        display:  ${props => props.showMenu === true ? 'block' : 'none'};
+        transition: 0.5s;
+        width: 100%;
     }
 `;
 
@@ -48,11 +59,33 @@ export const UserInformations = styled.div`
     }
 `;
 
+export const ContainerCloseMenu = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    @media(min-width: 801px) { 
+        & > svg{
+            display: none;
+        }
+    }
+    
+    & > svg{
+        font-size: 25px;
+        margin: 10px; 
+        color : #e5e5e5e7 ;
+    }
+`;
+
 export const Actions = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-top: 60%;
+
+    @media(max-width: 800px) { 
+        margin-top: 20%;
+    }
 
     & > div > a {
     text-decoration: none;

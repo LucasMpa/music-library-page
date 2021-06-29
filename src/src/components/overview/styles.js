@@ -12,27 +12,56 @@ export const Container = styled.div`
 
 export const SelectLanguage = styled.div`
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
 
-    & > div{
+    @media(min-width: 801px) { 
+        & > span{
+            display: none;
+        }
+    }
+
+    & > span{
+        display: flex;
+        align-items: flex-end;
+
+        & > svg{
+            font-size: 32px;
+        }
+
+        @media(min-width: 801px) { 
+            & > svg{
+                display: none;
+            }
+        }
+        
+
+    }
+    & > div {
+        display: flex;;
+
+         & > div{
         margin-top: 21px;
         opacity: 0.3;
         transition: 0.5s;
+        display: flex;
+        }
+
+        & > div:hover{
+            cursor: pointer;
+            opacity: 1;
+        }
+
+        & > div:first-child{
+            opacity: ${props => props.language === 'portuguese' && 1};
+            margin-right: 25px;
+        }
+
+        & > div:nth-child(2){
+            opacity: ${props => props.language === 'english' && 1};
+        }
     }
 
-    & > div:hover{
-        cursor: pointer;
-        opacity: 1;
-    }
-
-    & > div:first-child{
-        opacity: ${props => props.theme == 'portuguese' && 1};
-        margin-right: 25px;
-    }
-
-    & > div:nth-child(2){
-        opacity: ${props => props.theme == 'english' && 1};
-    }
+   
 `;
 
 export const FeaturedPlaylists = styled.div`
@@ -125,12 +154,12 @@ export const ScrollableContent = styled.div`
     }
 
     ::-webkit-scrollbar-thumb {
-        background-color: rgb(22, 10, 62);
+        background-color: rgb(47, 18, 140);
         border-radius: 4px;
     }
 
     ::-webkit-scrollbar-track {
-        background-color:rgb(47, 18, 140);
+        background-color:rgb(22, 10, 62);
         border-radius: 4px;
     }
     
@@ -186,12 +215,12 @@ export const TracksContent = styled.div`
     }
 
     ::-webkit-scrollbar-thumb {
-        background-color: rgb(22, 10, 62);
+        background-color: rgb(47, 18, 140);
         border-radius: 4px;
     }
 
     ::-webkit-scrollbar-track {
-        background-color:rgb(47, 18, 140);
+        background-color: rgb(22, 10, 62);
         border-radius: 4px;
     }
     

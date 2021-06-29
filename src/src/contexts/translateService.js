@@ -4,11 +4,12 @@ const TranslateServiceContext = createContext({});
 
 export const TranslateProvider = ({ children }) => {
   const [linguageForTranslate, setLinguageForTranslate] = useState('english');
+  const [showMenu, setShowMenu] = useState(false)
 
 
   const toTranslate = (forTranslate) => {
 
-    if(linguageForTranslate == 'portuguese'){
+    if(linguageForTranslate === 'portuguese'){
       const portuguese = {
         editProfile: 'Editar Perfil',
         overview: 'Visão Geral',
@@ -30,7 +31,7 @@ export const TranslateProvider = ({ children }) => {
       return portuguese[forTranslate];
     }
 
-     if(linguageForTranslate == 'english'){
+     if(linguageForTranslate === 'english'){
       const english = {
         editProfile: 'Edit Profile',
         overview: 'Overview',
@@ -60,8 +61,10 @@ export const TranslateProvider = ({ children }) => {
     <TranslateServiceContext.Provider
       value={{
         linguageForTranslate,
+        showMenu,
         setLinguageForTranslate,
-        toTranslate
+        toTranslate,
+        setShowMenu
       }}
     >
       {children}
