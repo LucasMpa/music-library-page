@@ -17,7 +17,7 @@ export const TranslateProvider = ({ children }) => {
         discover: 'Descubra',
         notifications: 'Notificações',
         account: 'Conta',
-        featuredPlaylists: 'Playlists em Destaque',
+        featuredPlaylists: 'Biblioteca',
         profileViews: 'Suas Visualizações',
         tracks: 'Músicas',
         songs: 'Músicas',
